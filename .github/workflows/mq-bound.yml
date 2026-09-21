@@ -1,0 +1,18 @@
+name: Owned merge-queue bound check
+
+on:
+  pull_request:
+  push:
+    branches:
+      - "feature-*"
+
+permissions:
+  contents: read
+
+jobs:
+  required-check:
+    name: mq-bound-ci-060219
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report inert success
+        run: echo "owned inert merge-queue validation"
